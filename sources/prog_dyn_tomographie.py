@@ -14,7 +14,7 @@ def T(G, ligneOuColonne, indice):
     #TB : tableau des booleéens
     #S : Liste des contraintes
     #L : Etat de la ligne ou colonne considérée      
-    S = [0] + (G[ligneOuColonne][indice]).copy() # pour utiliser les indices l tels que définis dans l'énoncé
+    S = [0] + (G[ligneOuColonne][indice])#copy() # pour utiliser les indices l tels que définis dans l'énoncé
     
     
     if ligneOuColonne == 0:
@@ -173,8 +173,8 @@ def coloration(G):
     return True
 
 if __name__ == "__main__":
-    for i in range(1,11):
-        G = readFile("instances/"+str(i)+".txt")
+    for i in range(10,11):
+        G = readFile(str(i)+".txt")
         print ("Instance n° ", i)
 #        print("Lignes", G[0])
 #        print("Colonnes", G[1])
@@ -186,6 +186,5 @@ if __name__ == "__main__":
 #        print(coloration(G))
         plt.imshow(G[2], cmap='binary', interpolation='none')
         plt.savefig(str(i)+'.png')
-    
     
     
